@@ -12,8 +12,8 @@ var (
 	AddressType               = GetEnv("SUBSTRATE_ADDRESS_TYPE", "1")
 	BalanceAccuracy           = GetEnv("SUBSTRATE_ACCURACY", "9")
 	CommissionAccuracy        = GetEnv("COMMISSION_ACCURACY", "9")
-	WSEndPoint                = GetEnv("CHAIN_WS_ENDPOINT", "wss://rpc.polkadot.io")
-	NetworkNode               = GetEnv("NETWORK_NODE", "polkadot")
+	WSEndPoint                = GetEnv("CHAIN_WS_ENDPOINT", "wss://kusama-rpc.polkadot.io")
+	NetworkNode               = GetEnv("NETWORK_NODE", "kusama")
 	IsProduction              = os.Getenv("DEPLOY_ENV") == "prod"
 )
 
