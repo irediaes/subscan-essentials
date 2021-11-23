@@ -54,10 +54,10 @@ func (s *Service) initSubRuntimeLatest() {
 	r := s.dao.RuntimeVersionRecent()
 	fmt.Println("recent", r.RawData)
 	// find db
-	// if recent := s.dao.RuntimeVersionRecent(); recent != nil && strings.HasPrefix(recent.RawData, "0x") {
-	// 	metadata.Latest(&metadata.RuntimeRaw{Spec: recent.SpecVersion, Raw: recent.RawData})
-	// 	return
-	// }
+	if recent := s.dao.RuntimeVersionRecent(); recent != nil && strings.HasPrefix(recent.RawData, "0x") {
+		metadata.Latest(&metadata.RuntimeRaw{Spec: recent.SpecVersion, Raw: recent.RawData})
+		return
+	}
 	// find metadata for blockChain
 	//
 	if raw := s.regCodecMetadata(); strings.HasPrefix(raw, "0x") {
